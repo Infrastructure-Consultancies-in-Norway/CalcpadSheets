@@ -104,7 +104,7 @@ p11_y = ground_y
 '<line x1="'offset_x'" y1="'ground_y + 35'" x2="'p4_x'" y2="'ground_y + 35'" style="stroke:blue; stroke-width:1.5" />
 '<line x1="'offset_x'" y1="'ground_y + 30'" x2="'offset_x'" y2="'ground_y + 40'" style="stroke:blue; stroke-width:1.5" />
 '<line x1="'p4_x'" y1="'ground_y + 30'" x2="'p4_x'" y2="'ground_y + 40'" style="stroke:blue; stroke-width:1.5" />
-'<text x="'(offset_x + p4_x)/2'" y="'ground_y + 50'" text-anchor="middle" fill="blue">B₁='B_t'</text>
+'<text x="'(offset_x + p4_x)/2'" y="'ground_y + 50'" text-anchor="middle" fill="blue">B<tspan baseline-shift="sub">t</tspan>='B_t'</text>
 '
 '<!-- B_ (Total base width) -->
 '<line x1="'offset_x'" y1="'ground_y + 75'" x2="'p11_x'" y2="'ground_y + 75'" style="stroke:blue; stroke-width:1.5" />
@@ -116,31 +116,31 @@ p11_y = ground_y
 '<line x1="'p9_x'" y1="'ground_y + 35'" x2="'p11_x'" y2="'ground_y + 35'" style="stroke:blue; stroke-width:1.5" />
 '<line x1="'p9_x'" y1="'ground_y + 30'" x2="'p9_x'" y2="'ground_y + 40'" style="stroke:blue; stroke-width:1.5" />
 '<line x1="'p11_x'" y1="'ground_y + 30'" x2="'p11_x'" y2="'ground_y + 40'" style="stroke:blue; stroke-width:1.5" />
-'<text x="'(p9_x + p11_x)/2'" y="'ground_y + 50'" text-anchor="middle" fill="blue">B₃='B_h'</text>
+'<text x="'(p9_x + p11_x)/2'" y="'ground_y + 50'" text-anchor="middle" fill="blue">B<tspan baseline-shift="sub">h</tspan>='B_h'</text>
 '
 '<!-- t_s1 (Base slab thickness - constant) -->
 '<line x1="'p9_x + 20'" y1="'ground_y'" x2="'p9_x + 20'" y2="'p9_y'" style="stroke:blue; stroke-width:1.5" />
 '<line x1="'p9_x + 15'" y1="'ground_y'" x2="'p9_x + 25'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
 '<line x1="'p9_x + 15'" y1="'p9_y'" x2="'p9_x + 25'" y2="'p9_y'" style="stroke:blue; stroke-width:1.5" />
-'<text x="'p9_x + 35'" y="'(ground_y + p9_y)/2'" text-anchor="start" fill="blue" dominant-baseline="middle">t₂₄='t_s1'</text>
+'<text x="'p9_x + 35'" y="'(ground_y + p9_y)/2'" text-anchor="start" fill="blue" dominant-baseline="middle">t<tspan baseline-shift="sub">s1</tspan>='t_s1'</text>
 '
 '<!-- t_v2 (Stem bottom width) -->
 '<line x1="'p5_x'" y1="'p5_y - 25'" x2="'p8_x'" y2="'p8_y - 25'" style="stroke:blue; stroke-width:1.5" />
 '<line x1="'p5_x'" y1="'p5_y - 30'" x2="'p5_x'" y2="'p5_y - 20'" style="stroke:blue; stroke-width:1.5" />
 '<line x1="'p8_x'" y1="'p8_y - 30'" x2="'p8_x'" y2="'p8_y - 20'" style="stroke:blue; stroke-width:1.5" />
-'<text x="'(p5_x + p8_x)/2'" y="'p5_y - 35'" text-anchor="middle" fill="blue">t₂₃='t_v2'</text>
+'<text x="'(p5_x + p8_x)/2'" y="'p5_y - 35'" text-anchor="middle" fill="blue">t<tspan baseline-shift="sub">v2</tspan>='t_v2'</text>
 '
 '<!-- t_s2 (Heel foundation height - right) -->
 '<line x1="'p10_x + 25'" y1="'ground_y'" x2="'p10_x + 25'" y2="'p10_y'" style="stroke:blue; stroke-width:1.5" />
 '<line x1="'p10_x + 20'" y1="'ground_y'" x2="'p10_x + 30'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
 '<line x1="'p10_x + 20'" y1="'p10_y'" x2="'p10_x + 30'" y2="'p10_y'" style="stroke:blue; stroke-width:1.5" />
-'<text x="'p10_x + 40'" y="'(ground_y + p10_y)/2'" text-anchor="start" fill="blue" dominant-baseline="middle">t₂₅='t_s2'</text>
+'<text x="'p10_x + 40'" y="'(ground_y + p10_y)/2'" text-anchor="start" fill="blue" dominant-baseline="middle">t<tspan baseline-shift="sub">s2</tspan>='t_s2'</text>
 '
 '<!-- t_s3 (Toe foundation height - left) -->
 '<line x1="'p2_x - 25'" y1="'p2_y'" x2="'p2_x - 25'" y2="'p3_y'" style="stroke:blue; stroke-width:1.5" />
 '<line x1="'p2_x - 30'" y1="'p2_y'" x2="'p2_x - 20'" y2="'p2_y'" style="stroke:blue; stroke-width:1.5" />
 '<line x1="'p2_x - 30'" y1="'p3_y'" x2="'p2_x - 20'" y2="'p3_y'" style="stroke:blue; stroke-width:1.5" />
-'<text x="'p2_x - 35'" y="'(p2_y + p3_y)/2'" text-anchor="end" fill="blue" dominant-baseline="middle">t₂₆='t_s3'</text>
+'<text x="'p2_x - 35'" y="'(p2_y + p3_y)/2'" text-anchor="end" fill="blue" dominant-baseline="middle">t<tspan baseline-shift="sub">s3</tspan>='t_s3'</text>
 '
 
 '

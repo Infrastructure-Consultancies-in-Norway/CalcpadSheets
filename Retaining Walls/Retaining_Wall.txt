@@ -13,6 +13,10 @@ t_s3 = 500'mm - Toe foundation height
 '<p><b>Backfill</b></p>
 β = 15.5'° - Backfill slope angle
 
+'<p><b>Toe Terrain</b></p>
+α = 10'° - Toe slope angle
+D = 1500'mm - Soil depth above bottom of foundation
+
 #val
 #hide
 'Calculated values
@@ -87,6 +91,14 @@ backfill_start_y = p7_y
 backfill_end_x = backfill_start_x + backfill_extent
 backfill_end_y = backfill_start_y - backfill_extent*tan(β)
 
+'Toe terrain points
+'Start from stem face (p5_x) at height D above bottom (ground_y)
+toe_start_x = p5_x
+toe_start_y = ground_y - D*scale
+toe_extent = 100
+toe_end_x = toe_start_x - toe_extent
+toe_end_y = toe_start_y + toe_extent*tan(α)
+
 #show
 '<svg viewbox="0 0 'w' 'h'" xmlns="http://www.w3.org/2000/svg" version="1.1" style="font-size:12px; width:'w'px; height:'h'px">
 '
@@ -95,6 +107,18 @@ backfill_end_y = backfill_start_y - backfill_extent*tan(β)
 '
 '<!-- Backfill terrain line -->
 '<line x1="'backfill_start_x'" y1="'backfill_start_y'" x2="'backfill_end_x'" y2="'backfill_end_y'" style="stroke:#654321; stroke-width:2" />
+'
+'<!-- Toe terrain line -->
+'<line x1="'toe_start_x'" y1="'toe_start_y'" x2="'toe_end_x'" y2="'toe_end_y'" style="stroke:#654321; stroke-width:2" />
+'
+'<!-- Toe slope angle label -->
+'<text x="'toe_end_x + 10'" y="'toe_end_y - 10'" fill="#654321" font-style="italic">α='α'°</text>
+'
+'<!-- D (Soil depth) dimension -->
+'<line x1="'p5_x - 15'" y1="'toe_start_y'" x2="'p5_x - 15'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p5_x - 20'" y1="'toe_start_y'" x2="'p5_x - 10'" y2="'toe_start_y'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p5_x - 20'" y1="'ground_y'" x2="'p5_x - 10'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
+'<text x="'p5_x - 25'" y="'(toe_start_y + ground_y)/2'" text-anchor="end" fill="blue" dominant-baseline="middle">D='D'</text>
 '
 '<!-- Ground line -->
 '<line x1="'offset_x - 20'" y1="'ground_y'" x2="'offset_x + B_*scale + 50'" y2="'ground_y'" style="stroke:black; stroke-width:2; stroke-dasharray:5,5" />

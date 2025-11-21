@@ -1,0 +1,147 @@
+'<h4>Retaining Wall - Geometry</h4>
+
+'<p><b>Wall Dimensions</b></p>
+H = 6000'mm - Total height
+t_1 = 300'mm - Top wall thickness
+t_23 = 900'mm - Stem bottom width
+B_1 = 590'mm - Toe width (left side)
+B_2 = 4000'mm - Total base width
+t_24 = 800'mm - Base slab thickness (constant)
+t_25 = 600'mm - Heel foundation height
+t_26 = 500'mm - Toe foundation height
+
+#val
+#hide
+'Calculated value
+B_3 = B_2 - B_1 - t_23'Toe width (right side)
+
+'SVG canvas size
+w = 800
+h = 700
+
+'Scale factor to fit drawing
+scale = 0.065*1.3
+offset_x = 150
+offset_y = 80
+
+'Ground level position
+ground_y = offset_y + H*scale
+
+'Wall geometry - Tapered stem with inclined foundation
+'Starting from bottom-left, going clockwise
+
+'Point 1: Bottom-left corner of base
+p1_x = offset_x
+p1_y = ground_y
+
+'Point 2: Left edge of toe step
+p2_x = offset_x
+p2_y = ground_y
+
+'Point 3: Top of toe step (foundation top at far left)
+p3_x = p2_x
+p3_y = ground_y - t_26*scale
+
+'Point 4: Inner left corner at foundation top (before stem)
+p4_x = offset_x + B_1*scale
+p4_y = ground_y - t_24*scale
+
+'Point 5: Bottom-left of stem (left edge)
+p5_x = p4_x
+p5_y = p4_y
+
+'Point 6: Top-left of stem (tapered inward)
+p6_x = offset_x + B_1*scale + (t_23 - t_1)*scale
+p6_y = offset_y
+
+'Point 7: Top-right of stem
+p7_x = p6_x + t_1*scale
+p7_y = p6_y
+
+'Point 8: Bottom-right of stem (vertical right edge)
+p8_x = p7_x
+p8_y = p5_y
+
+'Point 9: Inner right corner at foundation top (after stem)
+p9_x = p8_x
+p9_y = ground_y - t_24*scale
+
+'Point 10: Right edge of heel before final step
+p10_x = offset_x + B_2*scale
+p10_y = ground_y - t_25*scale
+
+'Point 11: Bottom-right corner
+p11_x = p10_x
+p11_y = ground_y
+
+#show
+'<svg viewbox="0 0 'w' 'h'" xmlns="http://www.w3.org/2000/svg" version="1.1" style="font-size:12px; width:'w'px; height:'h'px">
+'
+'<!-- Background -->
+'<rect x="0" y="0" width="'w'" height="'h'" style="fill:white" />
+'
+'<!-- Ground line -->
+'<line x1="'offset_x - 20'" y1="'ground_y'" x2="'offset_x + B_2*scale + 50'" y2="'ground_y'" style="stroke:black; stroke-width:2; stroke-dasharray:5,5" />
+'
+'<!-- Retaining wall -->
+'<polygon points="'p1_x','p1_y' 'p2_x','p2_y' 'p3_x','p3_y' 'p4_x','p4_y' 'p5_x','p5_y' 'p6_x','p6_y' 'p7_x','p7_y' 'p8_x','p8_y' 'p9_x','p9_y' 'p10_x','p10_y' 'p11_x','p11_y'" style="fill:#cccccc; stroke:black; stroke-width:2" />
+'
+'<!-- Dimension lines and labels -->
+'
+'<!-- H (Total height) - left side -->
+'<line x1="'offset_x - 30'" y1="'offset_y'" x2="'offset_x - 30'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'offset_x - 35'" y1="'offset_y'" x2="'offset_x - 25'" y2="'offset_y'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'offset_x - 35'" y1="'ground_y'" x2="'offset_x - 25'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
+'<text x="'offset_x - 40'" y="'(offset_y + ground_y)/2'" text-anchor="end" fill="blue" dominant-baseline="middle">H='H'</text>
+'
+'<!-- t_1 (Top wall thickness) -->
+'<line x1="'p6_x'" y1="'offset_y - 25'" x2="'p7_x'" y2="'offset_y - 25'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p6_x'" y1="'offset_y - 30'" x2="'p6_x'" y2="'offset_y - 20'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p7_x'" y1="'offset_y - 30'" x2="'p7_x'" y2="'offset_y - 20'" style="stroke:blue; stroke-width:1.5" />
+'<text x="'(p6_x + p7_x)/2'" y="'offset_y - 35'" text-anchor="middle" fill="blue">t₁='t_1'</text>
+'
+'<!-- B_1 (Toe width - left side) -->
+'<line x1="'offset_x'" y1="'ground_y + 35'" x2="'p4_x'" y2="'ground_y + 35'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'offset_x'" y1="'ground_y + 30'" x2="'offset_x'" y2="'ground_y + 40'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p4_x'" y1="'ground_y + 30'" x2="'p4_x'" y2="'ground_y + 40'" style="stroke:blue; stroke-width:1.5" />
+'<text x="'(offset_x + p4_x)/2'" y="'ground_y + 50'" text-anchor="middle" fill="blue">B₁='B_1'</text>
+'
+'<!-- B_2 (Total base width) -->
+'<line x1="'offset_x'" y1="'ground_y + 75'" x2="'p11_x'" y2="'ground_y + 75'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'offset_x'" y1="'ground_y + 70'" x2="'offset_x'" y2="'ground_y + 80'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p11_x'" y1="'ground_y + 70'" x2="'p11_x'" y2="'ground_y + 80'" style="stroke:blue; stroke-width:1.5" />
+'<text x="'(offset_x + p11_x)/2'" y="'ground_y + 90'" text-anchor="middle" fill="blue">B='B_2'</text>
+'
+'<!-- B_3 (Heel width - right side) -->
+'<line x1="'p9_x'" y1="'ground_y + 35'" x2="'p11_x'" y2="'ground_y + 35'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p9_x'" y1="'ground_y + 30'" x2="'p9_x'" y2="'ground_y + 40'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p11_x'" y1="'ground_y + 30'" x2="'p11_x'" y2="'ground_y + 40'" style="stroke:blue; stroke-width:1.5" />
+'<text x="'(p9_x + p11_x)/2'" y="'ground_y + 50'" text-anchor="middle" fill="blue">B₃='B_3'</text>
+'
+'<!-- t_24 (Base slab thickness - constant) -->
+'<line x1="'p9_x + 20'" y1="'ground_y'" x2="'p9_x + 20'" y2="'p9_y'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p9_x + 15'" y1="'ground_y'" x2="'p9_x + 25'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p9_x + 15'" y1="'p9_y'" x2="'p9_x + 25'" y2="'p9_y'" style="stroke:blue; stroke-width:1.5" />
+'<text x="'p9_x + 35'" y="'(ground_y + p9_y)/2'" text-anchor="start" fill="blue" dominant-baseline="middle">t₂₄='t_24'</text>
+'
+'<!-- t_23 (Stem bottom width) -->
+'<line x1="'p5_x'" y1="'p5_y - 25'" x2="'p8_x'" y2="'p8_y - 25'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p5_x'" y1="'p5_y - 30'" x2="'p5_x'" y2="'p5_y - 20'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p8_x'" y1="'p8_y - 30'" x2="'p8_x'" y2="'p8_y - 20'" style="stroke:blue; stroke-width:1.5" />
+'<text x="'(p5_x + p8_x)/2'" y="'p5_y - 35'" text-anchor="middle" fill="blue">t₂₃='t_23'</text>
+'
+'<!-- t_25 (Heel foundation height - right) -->
+'<line x1="'p10_x + 25'" y1="'ground_y'" x2="'p10_x + 25'" y2="'p10_y'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p10_x + 20'" y1="'ground_y'" x2="'p10_x + 30'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p10_x + 20'" y1="'p10_y'" x2="'p10_x + 30'" y2="'p10_y'" style="stroke:blue; stroke-width:1.5" />
+'<text x="'p10_x + 40'" y="'(ground_y + p10_y)/2'" text-anchor="start" fill="blue" dominant-baseline="middle">t₂₅='t_25'</text>
+'
+'<!-- t_26 (Toe foundation height - left) -->
+'<line x1="'p2_x - 25'" y1="'p2_y'" x2="'p2_x - 25'" y2="'p3_y'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p2_x - 30'" y1="'p2_y'" x2="'p2_x - 20'" y2="'p2_y'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'p2_x - 30'" y1="'p3_y'" x2="'p2_x - 20'" y2="'p3_y'" style="stroke:blue; stroke-width:1.5" />
+'<text x="'p2_x - 35'" y="'(p2_y + p3_y)/2'" text-anchor="end" fill="blue" dominant-baseline="middle">t₂₆='t_26'</text>
+'
+
+'
+'</svg>

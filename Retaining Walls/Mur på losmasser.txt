@@ -1,0 +1,19 @@
+#val
+#hide
+w = 400
+h = 400
+
+#hide
+x1 = 30
+y1 = 30
+x2 = 380
+y2 = 200
+#show
+'<svg viewbox="'0' '0' 'w' 'h'" xmlns="http://www.w3.org/2000/svg" version="1.1" style="font-size:16px; width:'w'px; height:'h'px">
+'<rect x="'0'" y="'0'" width="'w'" height="'h'" style="stroke:black; stroke-width:1; fill:WhiteSmoke; fill-opacity:0.2; stroke-opacity:0.1" />
+'
+'<line x1="'x1'" y1="'y1'" x2="'x2'" y2="'y2'" style="stroke:black; stroke-width:2; stroke-opacity:0.8" />
+'<text x="'w/2'" y="'h/2'" text-anchor="middle" fill="red" style="font-size:32px;">Your drawing goes here!</text>
+'
+'</svg>
+#equ

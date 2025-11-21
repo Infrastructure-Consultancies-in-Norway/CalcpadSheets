@@ -115,10 +115,12 @@ toe_end_y = toe_start_y + toe_extent*tan(α)
 '<text x="'toe_end_x + 10'" y="'toe_end_y - 10'" fill="#654321" font-style="italic">α='α'°</text>
 '
 '<!-- D (Soil depth) dimension -->
-'<line x1="'p5_x - 15'" y1="'toe_start_y'" x2="'p5_x - 15'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
-'<line x1="'p5_x - 20'" y1="'toe_start_y'" x2="'p5_x - 10'" y2="'toe_start_y'" style="stroke:blue; stroke-width:1.5" />
-'<line x1="'p5_x - 20'" y1="'ground_y'" x2="'p5_x - 10'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
-'<text x="'p5_x - 25'" y="'(toe_start_y + ground_y)/2'" text-anchor="end" fill="blue" dominant-baseline="middle">D='D'</text>
+'<line x1="'p5_x'" y1="'toe_start_y'" x2="'offset_x - 100'" y2="'toe_start_y'" style="stroke:blue; stroke-width:0.5; stroke-dasharray:2,2" />
+'<line x1="'offset_x'" y1="'ground_y'" x2="'offset_x - 100'" y2="'ground_y'" style="stroke:blue; stroke-width:0.5; stroke-dasharray:2,2" />
+'<line x1="'offset_x - 95'" y1="'toe_start_y'" x2="'offset_x - 95'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'offset_x - 100'" y1="'toe_start_y'" x2="'offset_x - 90'" y2="'toe_start_y'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'offset_x - 100'" y1="'ground_y'" x2="'offset_x - 90'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
+'<text x="'offset_x - 105'" y="'(toe_start_y + ground_y)/2'" text-anchor="end" fill="blue" dominant-baseline="middle">D='D'</text>
 '
 '<!-- Ground line -->
 '<line x1="'offset_x - 20'" y1="'ground_y'" x2="'offset_x + B_*scale + 50'" y2="'ground_y'" style="stroke:black; stroke-width:2; stroke-dasharray:5,5" />
@@ -132,10 +134,10 @@ toe_end_y = toe_start_y + toe_extent*tan(α)
 '<!-- Dimension lines and labels -->
 '
 '<!-- H (Total height) - left side -->
-'<line x1="'offset_x - 30'" y1="'offset_y'" x2="'offset_x - 30'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
-'<line x1="'offset_x - 35'" y1="'offset_y'" x2="'offset_x - 25'" y2="'offset_y'" style="stroke:blue; stroke-width:1.5" />
-'<line x1="'offset_x - 35'" y1="'ground_y'" x2="'offset_x - 25'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
-'<text x="'offset_x - 40'" y="'(offset_y + ground_y)/2'" text-anchor="end" fill="blue" dominant-baseline="middle">H='H'</text>
+'<line x1="'offset_x - 45'" y1="'offset_y'" x2="'offset_x - 45'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'offset_x - 50'" y1="'offset_y'" x2="'offset_x - 40'" y2="'offset_y'" style="stroke:blue; stroke-width:1.5" />
+'<line x1="'offset_x - 50'" y1="'ground_y'" x2="'offset_x - 40'" y2="'ground_y'" style="stroke:blue; stroke-width:1.5" />
+'<text x="'offset_x - 55'" y="'(offset_y + ground_y)/2'" text-anchor="end" fill="blue" dominant-baseline="middle">H='H'</text>
 '
 '<!-- t_v1 (Top wall thickness) -->
 '<line x1="'p6_x'" y1="'offset_y - 25'" x2="'p7_x'" y2="'offset_y - 25'" style="stroke:blue; stroke-width:1.5" />
